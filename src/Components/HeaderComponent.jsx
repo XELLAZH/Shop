@@ -9,7 +9,7 @@ function HeaderComponent () {
                 <Link to="/contacts">Контакты</Link>
                 <Link to="/payment-info">Оплата</Link>
                 <Link to="/delivery-info">Доставка</Link>
-
+                <Link to="/feedback">Оставить отзыв</Link>
             </nav>
             <button className="border-2 pt-2 pb-2 pr-3 pl-3 rounded-md cursor-pointer">Выйти</button>
         </div>

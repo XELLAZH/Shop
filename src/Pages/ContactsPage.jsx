@@ -1,12 +1,15 @@
 import FooterComponent from '../Components/FooterComponent';
-import HeaderComponent  from '../Components/HeaderComponent'
+import HeaderComponent  from '../Components/HeaderComponent';
+import ProductsNav from '../Components/ProductsNav';
+
 
 
 function ContactsPage () {
     return (
         <div className="font-normal">
             <HeaderComponent />
-            <div className="w100p min-h-[85vh] p-20 pl-70 pr-70 flex flex-col gap-3.5 text-xl">
+            <ProductsNav />
+            <div className="w100p min-h-[77vh] p-20 pl-70 pr-70 flex flex-col gap-3.5 text-xl">
                 <p className='text-5xl font-medium'>Контакты</p>
                 <p>Адрес: г. Смоленск, ул. Большая Советская, д. 74, офис 108</p>
                 <p>Телефон: +7 (4852) 94-05-66</p>
