@@ -1,0 +1,18 @@
+import { Link } from "react-router-dom";
+
+function HeaderComponent () {
+    return (
+        <div className="bg-gray-700 w100p h-20 pr-20 pl-20 text-white flex justify-between items-center">
+            <p className="text-4xl">ООО "СББ"</p>
+            <nav className="text-gray-400 flex gap-5.5">
+                <Link to="/">Об организации</Link>
+                <Link to="/contacts">Контакты</Link>
+                <Link to="/payment-info">Оплата</Link>
+                <Link to="/delivery-info">Доставка</Link>
+
+            </nav>
+            <button className="border-2 pt-2 pb-2 pr-3 pl-3 rounded-md cursor-pointer">Выйти</button>
+        </div>
+    )
+}
+export default HeaderComponent;
