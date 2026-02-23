@@ -2,7 +2,6 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import HomePage from './Pages/HomePage'
 import AdminFeedbackPage from './Pages/AdminFeedbackPage'
 import AdminPopularPage from './Pages/AdminPopularPage'
-import AdminBoughtAmountPage from './Pages/AdminBoughtAmountPage'
 import AdminMostActiveDistrictPage from './Pages/AdminMostActiveDistrictPage'
 import AdminOrdersPage from './Pages/AdminOrdersPage'
 import ContactsPage from './Pages/ContactsPage'
@@ -13,6 +12,7 @@ import ProductsDoorphonesPage from './Pages/ProductsDoorphonesPage'
 import ProductsCabelsPage from './Pages/ProductsCabelsPage'
 import ProductsFiresecurePage from './Pages/ProductsFiresecurePage'
 import CartPage from './Pages/CartPage'
+import CreateFeedbackPage from './Pages/CreateFeedbackPage'
 
 
 function App() {
@@ -20,10 +20,9 @@ function App() {
     <div className="App">
       <BrowserRouter >
         <Routes>
-          <Route path="/" element={<HomePage />}/>
+          <Route path="/admin" element={<AdminFeedbackPage />}/>
           <Route path="/admin/feedback" element={<AdminFeedbackPage />}/>
           <Route path="/admin/popular" element={<AdminPopularPage />}/>
-          <Route path="/admin/bought-amount" element={<AdminBoughtAmountPage />}/>
           <Route path="/admin/active-district" element={<AdminMostActiveDistrictPage />}/>
           <Route path="/admin/orders" element={<AdminOrdersPage />}/>
 
@@ -37,6 +36,7 @@ function App() {
           <Route path="/products/cabels" element={<ProductsCabelsPage />}/>
           <Route path="/products/firesecure" element={<ProductsFiresecurePage />}/>
           <Route path="/cart" element={<CartPage />}/>
+          <Route path='/feedback' element={<CreateFeedbackPage />}/>
 
         </Routes>
       </BrowserRouter>
