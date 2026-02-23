@@ -1,5 +1,6 @@
 import FooterComponent from '../Components/FooterComponent';
 import HeaderComponent  from '../Components/HeaderComponent'
+import ProductsNav from '../Components/ProductsNav';
 import moneyIcon from '../assets/Money-Icon.svg'
 
 
@@ -7,6 +8,7 @@ function DeliveryPage () {
     return (
         <div className="font-normal">
             <HeaderComponent />
+            <ProductsNav />
             <div className="w100p min-h-[85vh] p-20 pl-70 pr-70 flex flex-col gap-3.5 text-xl">
                 <p className='text-5xl font-medium'>Доставка</p>
                 <div className="flex justify-center mt-20"><img src="" className='w-[20vw]' /></div>

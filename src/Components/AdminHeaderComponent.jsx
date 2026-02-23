@@ -6,7 +6,6 @@ export default function AdminHeaderComponent() {
             <nav className="flex justify-between items-center text-2xl text-cyan-300 border-b-2">
                 <Link to="/admin/feedback" className="pb-4">Отзывы</Link>
                 <Link to="/admin/popular" className="pb-4">Популярный раздел</Link>
-                <Link to="/admin/bought-amount" className="pb-4">Количество купленных товаров</Link>
                 <Link to="/admin/active-district" className="pb-4">Самый активный район</Link>
                 <Link to="/admin/orders" className="pb-4">Заказы</Link>
             </nav>

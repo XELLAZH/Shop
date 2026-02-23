@@ -15,6 +15,7 @@ import ProductsFiresecurePage from "./Pages/ProductsFiresecurePage";
 import CartPage from "./Pages/CartPage";
 import RegisterPage from "./Pages/RegisterPage";
 import LoginPage from "./Pages/LoginPage";
+import CreateFeedbackPage from "./Pages/CreateFeedbackPage"
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
             element={<ProductsFiresecurePage />}
           />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/feedback" element={<CreateFeedbackPage />}/>
 
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />

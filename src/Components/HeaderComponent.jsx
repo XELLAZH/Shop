@@ -13,6 +13,7 @@ function HeaderComponent() {
         <Link to="/contacts">Контакты</Link>
         <Link to="/payment-info">Оплата</Link>
         <Link to="/delivery-info">Доставка</Link>
+        <Link to="/feedback">Оставить отзыв</Link>
       </nav>
       <div className="flex flex-row gap-2">
         {currentUser ? (
