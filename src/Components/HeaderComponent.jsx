@@ -1,10 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCurrentUser } from "../Hooks/useCurrentUser";
 import LogoutButton from "./LogoutButton";
+import { useEffect } from "react";
 
 function HeaderComponent() {
   const { currentUser } = useCurrentUser();
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (currentUser?.roles.includes("admin")) {
+      navigate("/admin")
+    }
+  }, [currentUser])
   return (
     <div className="bg-gray-700 w100p h-20 pr-20 pl-20 text-white flex justify-between items-center">
       <p className="text-4xl">ООО "СББ"</p>
