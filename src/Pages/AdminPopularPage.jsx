@@ -1,49 +1,48 @@
 import AdminHeaderComponent from "../Components/AdminHeaderComponent";
+import { useProducts } from "../Hooks/useProducts";
 
 export default function AdminPopularPage() {
-    const data = [
-        {
-            "category": "Домофоны",
-            "amount": 3
-        },
-        {
-            "category": "Системы оповещения",
-            "amount": 2
-        },
-        {
-            "category": "Видеонаблюдение",
-            "amount": 2
-        },
-        {
-            "category": "Охрано-пожарная сигнализация",
-            "amount": 2
-        },
-        {
-            "category": "Кабеля",
-            "amount": 2
-        },
-    ]
+  const { products } = useProducts();
 
-    const tableRows = data.map(element => <tr className="border-t-1">
-        <td>{element.category}</td>
-        <td>{element.amount}</td>
-    </tr>)
-    return (
-        <>
-            <AdminHeaderComponent />
-            <div className="flex w-[100vw] mt-10 pr-20 pr-25 pl-25">
-                <table class="table-fixed flex-col w-[90vw] border-collapse">
-                    <thead className="">
-                        <tr className="">
-                            <th class="flex">Раздел</th>
-                            <th class="flex-col text-start">Количество оборудования (штук)</th>
-                        </tr>
-                    </thead>
-                    <tbody className="">
-                        {tableRows}
-                    </tbody>
-                </table>
-            </div>
-        </>
-    )
+  const categories = [
+    "Видеонаблюдение",
+    "Домофоны",
+    "Кабеля",
+    "Охранно-пожарная сигнализация",
+  ];
+
+  const aggregateCategories = () => {
+    const categoriesCounts = new Array(4).fill(0);
+
+    products.forEach(p => {
+        categoriesCounts[p.groupNumber]++;
+    });
+
+    return categoriesCounts;
+  }
+
+  const tableRows = aggregateCategories().map((count, i) => (
+    <tr className="border-t-1">
+      <td>{categories[i]}</td>
+      <td>{count}</td>
+    </tr>
+  ));
+  return (
+    <>
+      <AdminHeaderComponent />
+      <div className="flex w-[100vw] mt-10 pr-20 pr-25 pl-25">
+        <table class="table-fixed flex-col w-[90vw] border-collapse">
+          <thead className="">
+            <tr className="">
+              <th class="flex">Раздел</th>
+              <th class="flex-col text-start">
+                Количество оборудования (штук)
+              </th>
+            </tr>
+          </thead>
+          <tbody className="">{tableRows}</tbody>
+        </table>
+      </div>
+    </>
+  );
 }
