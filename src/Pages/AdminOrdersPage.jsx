@@ -1,6 +1,16 @@
+import { useEffect, useState } from "react";
 import AdminHeaderComponent from "../Components/AdminHeaderComponent";
+import { getAllOrders } from "../Api/order/getAllOrders"
 
 export default function AdminOrdersPage() {
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        getAllOrders().then((result) => {
+            setOrders(result)
+        })
+    }, [])
+
     const data = [
         {
             "contact": "Екатерина",
@@ -36,16 +46,17 @@ export default function AdminOrdersPage() {
         
     ]
 
-    const tableRows = data.map(element => <tr className="border-t-1">
-        <td>{element.contact}</td>
+    // const sumOfCosts = orders.map(element => element.lineItems.product.cost);
+    // console.log(sumOfCosts);
+    const tableRows = orders.map(element => <tr className="border-t-1">
+        <td>{element.user.userName}</td>
         <td>{element.region}</td>
         <td>{element.district}</td>
-        <td>{element.adres}</td>
-        <td>{element.phone}</td>
-        <td>{element.extra}</td>
-        <td>{element.products}</td>
-        <td>{element.price}</td>
-
+        <td>{element.address}</td>
+        <td>{element.phoneNumber}</td>
+        <td>{element.comment}</td>
+        <td>{element.lineItems.map((e) => `${e.product.name}, `)}</td>
+        <td>{element.lineItems.reduce((sum, item) => (item.product?.cost ?? 0) + sum, 0)}</td>
     </tr>)
     return (
         <>
