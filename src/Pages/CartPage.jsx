@@ -39,6 +39,8 @@ export default function ProductsCabelsPage() {
 
       setIsLoading(false);
 
+      localStorage.clear();
+
       window.location.reload();
     } catch (error) {
       console.log(error);
