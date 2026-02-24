@@ -1,6 +1,6 @@
 import { axiosInstance } from "../axiosInstance";
 
-export const getAllProducts = async (groupNumber, searchTerm) => {
+export const getAllProducts = async (groupNumber, searchTerm = "") => {
   const request = {
     groupNumber,
     searchTerm,

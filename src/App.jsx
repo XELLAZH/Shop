@@ -8,14 +8,11 @@ import AdminOrdersPage from "./Pages/AdminOrdersPage";
 import ContactsPage from "./Pages/ContactsPage";
 import PaymentPage from "./Pages/PaymentPage";
 import DeliveryPage from "./Pages/DeliveryPage";
-import ProductsVideoPage from "./Pages/ProductsVideoPage";
-import ProductsDoorphonesPage from "./Pages/ProductsDoorphonesPage";
-import ProductsCabelsPage from "./Pages/ProductsCabelsPage";
-import ProductsFiresecurePage from "./Pages/ProductsFiresecurePage";
 import CartPage from "./Pages/CartPage";
 import RegisterPage from "./Pages/RegisterPage";
 import LoginPage from "./Pages/LoginPage";
 import CreateFeedbackPage from "./Pages/CreateFeedbackPage"
+import ProductsPage from "./Pages/ProductsPage"
 
 function App() {
   return (
@@ -41,16 +38,8 @@ function App() {
           <Route path="/payment-info" element={<PaymentPage />} />
           <Route path="/delivery-info" element={<DeliveryPage />} />
 
-          <Route path="/products/video" element={<ProductsVideoPage />} />
-          <Route
-            path="/products/doorphones"
-            element={<ProductsDoorphonesPage />}
-          />
-          <Route path="/products/cabels" element={<ProductsCabelsPage />} />
-          <Route
-            path="/products/firesecure"
-            element={<ProductsFiresecurePage />}
-          />
+          <Route path="/products/" element={<ProductsPage />} />
+
           <Route path="/cart" element={<CartPage />} />
           <Route path="/feedback" element={<CreateFeedbackPage />}/>
 
