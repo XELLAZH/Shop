@@ -23,6 +23,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminFeedbackPage />} />
           <Route path="/admin/feedback" element={<AdminFeedbackPage />} />
           <Route path="/admin/popular" element={<AdminPopularPage />} />
           <Route

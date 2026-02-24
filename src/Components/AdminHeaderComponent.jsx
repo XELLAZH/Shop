@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import LogoutButton from "./LogoutButton";
 
 export default function AdminHeaderComponent() {
     return (
@@ -8,6 +9,7 @@ export default function AdminHeaderComponent() {
                 <Link to="/admin/popular" className="pb-4">Популярный раздел</Link>
                 <Link to="/admin/active-district" className="pb-4">Самый активный район</Link>
                 <Link to="/admin/orders" className="pb-4">Заказы</Link>
+                <LogoutButton />
             </nav>
         </header>
     )

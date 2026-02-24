@@ -1,20 +1,18 @@
 import AdminHeaderComponent from "../Components/AdminHeaderComponent";
+import { getAllReviews } from "../Api/review/getAllReviews"
+import { useEffect, useState } from "react";
 
 export default function AdminFeedbackPage() {
-    const data = [
-        {
-            "date": "2018-05-30 12:35:08",
-            "message": "Всё супер"
-        },
-        {
-            "date": "2018-05-30 12:35:20",
-            "message": "Отличная Организация"
-        },
-    ]
+    const [reviews, setReviews] = useState([])
 
-    const tableRows = data.map(element => <tr className="border-t-1">
-        <td>{element.date}</td>
-        <td>{element.message}</td>
+    useEffect(() => {
+        getAllReviews().then((result) => setReviews(result))
+    }, [])
+    
+
+    const tableRows = reviews.map(element => <tr className="border-t-1">
+        <td>{new Date(element.createdOnUtc).toLocaleString()}</td>
+        <td>{element.text}</td>
     </tr>)
     return (
         <>

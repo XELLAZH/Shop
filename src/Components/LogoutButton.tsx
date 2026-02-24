@@ -10,7 +10,7 @@ export default function LogoutButton() {
 
       await logoutUser();
 
-      window.location.reload();
+      window.location.href = "/";
     } catch (error) {
       console.log(error);
       alert("Unexpected error");
